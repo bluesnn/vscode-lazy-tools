@@ -1,0 +1,47 @@
+{
+  "name": "lazy-tools",
+  "displayName": "lazy-tools",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:editor.toUpperCaseSeparate",
+    "onLanguage:javascript"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "editor.toUpperCaseSeparate",
+        "title": "小驼峰转下划线大写"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "editor.toUpperCaseSeparate",
+        "key": "cmd+shift+m"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "pnpm run lint",
+    "test": "vscode-test",
+    "package": "pnpm vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.85.0",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8",
+    "@vscode/vsce": "^2.22.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  }
+}
